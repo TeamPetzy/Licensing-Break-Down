@@ -1,136 +1,261 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta
+      name="keywords"
+      content="Queenston, Chevrolet, Buick, GMC, 1968, Hamilton, Ontario, Canada, GM, General Motors, General, Motors, Car, Cars, Truck, Trucks, SUV, SUVs, Van, Vans, Vehicle, Vehicles, New, Used, Pre-Owned, Preowned, Pre, Owned, Pre-Owned, Preowned, Pre, Owned, Certified, Service, Parts, Accessories, Financing, Lease, Leasing, Lease, Specials, Offers, Incentives, Build, Price, Quote, Compare, Sedan, Coupe, Convertible, Hatchback, Chevrol"
+    />
+    <meta name="description" content="Licensing Break Down" />
+    <meta name="author" content="Zayed Kherani, Team Petz" />
+
+    <meta property="og:description" content="Licensing Break Down" />
+    <meta property="og:site_name" content="Licensing Break Down" />
+    <meta property="og:title" content="Licensing Break Down" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="./" />
+
+    <meta property="og:image" content="./assets/images/logo.png" />
+    <meta property="og:image:height" content="82" />
+    <meta property="og:image:width" content="310" />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+
     <title>Licensing Break Down</title>
+
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <script src="./js/clear.js"></script>
+    <script src="./js/autodeselector.js"></script>
+    <script src="./js/validator.js"></script>
+    <script src="./js/print.js"></script>
+    <script src="./js/pdf.js"></script>
+    <script src="./js/unload.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   </head>
   <body>
-    <header>
-      Licensing Break Down
-    </header>
+    <div class="printContainer">
+      <div class="card">
+        <img src="./assets/images/logo.png" alt="" />
+        <header>Licensing Break Down</header>
 
-    <section>
-      <div>Customer Name(s)</div>
-      <input type="text" />
-    </section>
+        <section class="firstQuarter">
+          <section class="row">
+            <div class="sectionNameBold">Customer Name(s):</div>
+            <input type="text" id="customerName" class="sectionInput" />
+          </section>
 
-    <section>
-      <div>Delivery Date/Time</div>
-      <input type="date" />
-      <input type="time" />
-    </section>
+          <section class="row">
+            <div class="sectionNameBold">Delivery Date/Time:</div>
+            <input type="date" id="dateInput" class="sectionInput" />
+            <span class="sectionInput inputSeperator">/</span>
+            <input type="time" id="timeInput" class="sectionInput" />
+          </section>
+        </section>
 
-    <section>
-      <div>Licensing/Plate Type</div>
-      <div>
-        <input
-          type="checkbox"
-          id="newPlates"
-          name="newPlates"
-          value="New Plates"
-        />
-        <label for="newPlates">New Plates</label>
-        <input type="checkbox" id="transfer" name="transfer" value="Transfer" />
-        <label for="transfer">Transfer</label>
-        <input
-          type="checkbox"
-          id="setayLease"
-          name="setayLease"
-          value="Setay Lease"
-        />
-        <label for="setayLease">Setay Lease</label>
-        <input
-          type="checkbox"
-          id="gMFLLease"
-          name="gMFLLease"
-          value="GMFL Lease"
-        />
-        <label for="gMFLLease">GMFL Lease</label>
+        <section class="secondQuarter">
+          <section class="row">
+            <div class="sectionNameBold">Licensing/Plate Type:</div>
+            <label>
+              <input
+                type="checkbox"
+                id="newPlates"
+                name="newPlates"
+                value="New Plates"
+                class="checkbox"
+              />
+              <span> New Plates </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="transfer"
+                name="transfer"
+                value="Transfer"
+                class="checkbox"
+              />
+              <span> Transfer </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="setayLease"
+                name="setayLease"
+                value="Setay Lease"
+                class="checkbox"
+              />
+              <span> Setay Lease </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="gMFLLease"
+                name="gMFLLease"
+                value="GMFL Lease"
+                class="checkbox"
+              />
+              <span> GMFL Lease </span>
+            </label>
+          </section>
+          <section class="row">
+            <label>
+              <input
+                type="checkbox"
+                id="passenger"
+                name="passenger"
+                value="Passenger"
+                class="checkbox"
+              />
+              <span> Passenger </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="commercial"
+                name="commercial"
+                value="Commercial"
+                class="checkbox"
+              />
+              <span> Commercial </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="business"
+                name="business"
+                value="Business"
+                class="checkbox"
+              />
+              <span> Business </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="personal"
+                name="personal"
+                value="Personal"
+                class="checkbox"
+              />
+              <span> Personal </span>
+            </label>
+            <section class="row">
+              <div class="sectionNameBold">Weight:</div>
+              <input id="weight" type="number" />
+              <span>kg</span>
+            </section>
+          </section>
+        </section>
+
+        <section class="secondHalf">
+          <section class="row">
+            <div class="sectionNameBold">Insurance Information Provided:</div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  id="yes"
+                  name="yes"
+                  value="Yes"
+                  class="checkbox"
+                />
+                <span> Yes </span>
+              </label>
+              <span> OR </span>
+              <label>
+                <input
+                  type="checkbox"
+                  id="no"
+                  name="no"
+                  value="No"
+                  class="checkbox"
+                />
+                <span> No </span>
+              </label>
+            </div>
+          </section>
+
+          <section class="row">
+            <div class="sectionNameBold">Licensing Price:</div>
+            <label>
+              <input
+                type="checkbox"
+                id="thirtyTwo"
+                name="thirtyTwo"
+                value="ThirtyTwo"
+                class="checkbox"
+              />
+              <span> $32.00 </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="fiftyNine"
+                name="fiftyNine"
+                value="FiftyNine"
+                class="checkbox"
+              />
+              <span> $59.00 </span>
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="sixtyFour"
+                name="sixtyFour"
+                value="SixtyFour"
+                class="checkbox"
+              />
+              <span> $64.00 </span>
+            </label>
+          </section>
+
+          <section class="row">
+            <section class="row">
+              <div class="sectionNameBold">Insurance Provider</div>
+              <input id="insuranceProvider" type="text" />
+            </section>
+            <section class="row">
+              <div class="sectionNameBold">RIN #</div>
+              <input id="rIN" type="text" />
+            </section>
+          </section>
+
+          <section class="row notes">
+            <div class="sectionNameBold">Notes</div>
+            <textarea name="notes" id="notes" cols="30"></textarea>
+          </section>
+
+          <section class="row">
+            <section class="row">
+              <div class="sectionNameBold">Sales Consultant</div>
+              <input id="salesConsultant" type="text" />
+            </section>
+            <section class="row">
+              <div class="sectionNameBold">Business Manager</div>
+              <input id="businessManager" type="text" />
+            </section>
+          </section>
+        </section>
+
+        <footer>
+          PLEASE MAKE SURE ALL THE ABOVE IS FILLED OUT AND CORRECT BEOFRE
+          SUBMITTING. IF SOMETHING IS MISSING, IT WILL BE REJECTED AND RETURN TO
+          YOU TO BE COMPLETED.
+        </footer>
+
+        <section data-html2canvas-ignore="true" id="bottom" class="bottom">
+          <button id="print" class="btn">Print</button>
+          <button id="pdf" class="btn">Save as PDF</button>
+          <button id="clear" class="btn">Clear</button>
+        </section>
       </div>
-      <div>
-        <input
-          type="checkbox"
-          id="passenger"
-          name="passenger"
-          value="Passenger"
-        />
-        <label for="Passenger">Passenger</label>
-        <input
-          type="checkbox"
-          id="commercial"
-          name="commercial"
-          value="Commercial"
-        />
-        <label for="commercial">Commercial</label>
-        <input type="checkbox" id="business" name="business" value="Business" />
-        <label for="business">Business</label>
-        <input type="checkbox" id="personal" name="personal" value="Personal" />
-        <label for="personal">Personal</label>
-        <div>
-          <div>Weight</div>
-          <input type="text" />
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div>Insurance Information Provided</div>
-      <div>
-        <input type="checkbox" id="yes" name="yes" value="Yes" />
-        <label for="yes">Yes</label>
-        <span> OR </span>
-        <input type="checkbox" id="no" name="no" value="No" />
-        <label for="no">No</label>
-      </div>
-    </section>
-
-    <section>
-      <div>Licensing Price</div>
-      <input
-        type="checkbox"
-        id="thirtyTwo"
-        name="thirtyTwo"
-        value="ThirtyTwo"
-      />
-      <label for="thirtyTwo">$32.00</label>
-      <input
-        type="checkbox"
-        id="fiftyNine"
-        name="fiftyNine"
-        value="FiftyNine"
-      />
-      <label for="fiftyNine">$59.00</label>
-      <input
-        type="checkbox"
-        id="sixtyFour"
-        name="sixtyFour"
-        value="SixtyFour"
-      />
-      <label for="sixtyFour">$64.00</label>
-    </section>
-
-    <section>
-      <div>Notes</div>
-      <input type="text" />
-    </section>
-
-    <section>
-      <div>
-        <div>Sales Consultant</div>
-        <input type="text" />
-      </div>
-      <div>
-        <div>Business Manager</div>
-        <input type="text" />
-      </div>
-    </section>
-
-    <footer>
-      PLEASE MAKE SURE ALL THE ABOVE IS FILLED OUT BEOFRE PLACING IN BIN FOR
-      LICENSING. IF SOMETHING IS MISSING IT WILL BE RETURNED TO YOU TO BE
-      COMPLETED.
-    </footer>
+    </div>
   </body>
 </html>
