@@ -28,6 +28,8 @@ function validate(validateFor) {
   var fiftyNine = document.getElementById("fiftyNine").checked;
   var sixtyFour = document.getElementById("sixtyFour").checked;
 
+  var otherLicensePrice = document.getElementById("otherLicensePrice").value;
+
   var insuranceProvider = document.getElementById("insuranceProvider").value;
 
   var salesConsultant = document.getElementById("salesConsultant").value;
@@ -90,7 +92,7 @@ function validate(validateFor) {
     fieldsWithValue.push("Insurance Information Procvided");
   }
 
-  if (thirtyTwo === false && fiftyNine === false && sixtyFour === false) {
+  if (thirtyTwo === false && fiftyNine === false && sixtyFour === false && otherLicensePrice === "") {
     fieldsWithoutValue.push("Licensing Price");
   } else {
     fieldsWithValue.push("Licensing Price");
