@@ -3,9 +3,11 @@ window.addEventListener(
   function () {
     function clear() {
       document.getElementById("customerName").value = "";
-
+      
       document.getElementById("dateInput").value = "";
       document.getElementById("timeInput").value = "";
+
+      document.getElementById("stockNumber").value = "";
 
       document.getElementById("newPlates").checked = false;
       document.getElementById("transfer").checked = false;

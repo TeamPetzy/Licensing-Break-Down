@@ -3,9 +3,11 @@ function validate(validateFor) {
   var fieldsWithValue = [];
 
   var customerName = document.getElementById("customerName").value;
-
+  
   var dateInput = document.getElementById("dateInput").value;
   var timeInput = document.getElementById("timeInput").value;
+
+  var stockNumber = document.getElementById("stockNumber").value;
 
   var newPlates = document.getElementById("newPlates").checked;
   var transfer = document.getElementById("transfer").checked;
@@ -36,7 +38,7 @@ function validate(validateFor) {
   } else {
     fieldsWithValue.push("Customer Name");
   }
-
+  
   if (dateInput === "") {
     fieldsWithoutValue.push("Date");
   } else {
@@ -48,6 +50,12 @@ function validate(validateFor) {
     fieldsWithValue.push("Time");
   }
 
+  if (stockNumber === "") {
+    fieldsWithoutValue.push("Stock Number");
+  } else {
+    fieldsWithValue.push("Stock Number");
+  }
+  
   if (newPlates === false && transfer === false) {
     fieldsWithoutValue.push("New Plates or Transfer");
   } else {
