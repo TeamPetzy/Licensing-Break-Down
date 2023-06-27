@@ -1,9 +1,9 @@
-function validate(validateFor) {
+function validate() {
   var fieldsWithoutValue = [];
   var fieldsWithValue = [];
 
   var customerName = document.getElementById("customerName").value;
-  
+
   var dateInput = document.getElementById("dateInput").value;
   var timeInput = document.getElementById("timeInput").value;
 
@@ -40,7 +40,7 @@ function validate(validateFor) {
   } else {
     fieldsWithValue.push("Customer Name");
   }
-  
+
   if (dateInput === "") {
     fieldsWithoutValue.push("Date");
   } else {
@@ -57,7 +57,7 @@ function validate(validateFor) {
   } else {
     fieldsWithValue.push("Stock Number");
   }
-  
+
   if (newPlates === false && transfer === false) {
     fieldsWithoutValue.push("New Plates or Transfer");
   } else {
@@ -92,7 +92,12 @@ function validate(validateFor) {
     fieldsWithValue.push("Insurance Information Procvided");
   }
 
-  if (thirtyTwo === false && fiftyNine === false && sixtyFour === false && otherLicensePrice === "") {
+  if (
+    thirtyTwo === false &&
+    fiftyNine === false &&
+    sixtyFour === false &&
+    otherLicensePrice === ""
+  ) {
     fieldsWithoutValue.push("Licensing Price");
   } else {
     fieldsWithValue.push("Licensing Price");
@@ -115,25 +120,9 @@ function validate(validateFor) {
     fieldsWithValue.push("Business Manager");
   }
 
-  if (validateFor === "unload" && fieldsWithValue.length > 0) {
+  if (fieldsWithValue.length > 0) {
     return true;
-  } else if (validateFor === "unload" && fieldsWithValue.length === 0) {
-    return false;
   }
 
-  if (validateFor !== "unload" && fieldsWithoutValue.length > 0) {
-    alert(
-      `Please fill out the following fields before ${
-        validateFor === "print"
-          ? "printing"
-          : validateFor === "pdf"
-          ? "saving pdf"
-          : ""
-      }:\n` + fieldsWithoutValue.join("\n")
-    );
-
-    return false;
-  }
-
-  return true;
+  return false;
 }

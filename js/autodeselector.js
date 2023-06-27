@@ -18,6 +18,7 @@ window.addEventListener(
     var thirtyTwo = document.getElementById("thirtyTwo");
     var fiftyNine = document.getElementById("fiftyNine");
     var sixtyFour = document.getElementById("sixtyFour");
+    var otherLicensePrice = document.getElementById("otherLicensePrice");
 
     newPlates.addEventListener("change", function () {
       if (newPlates.checked) {
@@ -91,18 +92,28 @@ window.addEventListener(
       if (thirtyTwo.checked) {
         fiftyNine.checked = false;
         sixtyFour.checked = false;
+        otherLicensePrice.value = "";
       }
     });
     fiftyNine.addEventListener("change", function () {
       if (fiftyNine.checked) {
         thirtyTwo.checked = false;
         sixtyFour.checked = false;
+        otherLicensePrice.value = "";
       }
     });
     sixtyFour.addEventListener("change", function () {
       if (sixtyFour.checked) {
         thirtyTwo.checked = false;
         fiftyNine.checked = false;
+        otherLicensePrice.value = "";
+      }
+    });
+    otherLicensePrice.addEventListener("input", function () {
+      if (otherLicensePrice.value != "") {
+        thirtyTwo.checked = false;
+        fiftyNine.checked = false;
+        sixtyFour.checked = false;
       }
     });
   },

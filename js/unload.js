@@ -1,6 +1,6 @@
 window.onload = function () {
   window.addEventListener("beforeunload", function (e) {
-    if (!validate("unload")) {
+    if (!validate()) {
       return undefined;
     }
 
